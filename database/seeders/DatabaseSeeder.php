@@ -1,8 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Referee;
+use App\Models\SoccerPlayer;
+use App\Models\Stadium;
+use App\Models\Team;
+use App\Models\TeamFan;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,13 +18,12 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Referee::factory(10)->create();
+        Team::factory(10)->create();
+        SoccerPlayer::factory(200)->create();
+        TeamFan::factory(1000)->create();
+        Stadium::factory(100)->create();
     }
 }
